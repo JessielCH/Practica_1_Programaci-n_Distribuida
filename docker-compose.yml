@@ -33,7 +33,7 @@ services:
       - backend
     volumes:
       - ./frontend:/app
-      - /app/node_modules # Evita que los módulos de Windows pisen los de Linux
+      - /app/node_modules
 
 volumes:
   postgres_data:
