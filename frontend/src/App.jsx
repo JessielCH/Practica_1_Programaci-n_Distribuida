@@ -5,19 +5,21 @@ function App() {
   const [localTeams, setLocalTeams] = useState([]);
   const [newTeamName, setNewTeamName] = useState("");
 
+  const API_URL = "http://54.156.217.202:5000"; // Definimos la base de la URL
+
   // Load local teams from DB on component mount
   useEffect(() => {
     fetchLocalTeams();
   }, []);
 
   const fetchExternal = async () => {
-    const res = await fetch("http://localhost:5000/api/external-teams");
+    const res = await fetch(`${API_URL}/api/external-teams`);
     const data = await res.json();
     setExternalTeams(data.teams || []);
   };
 
   const fetchLocalTeams = async () => {
-    const res = await fetch("http://localhost:5000/api/teams");
+    const res = await fetch(`${API_URL}/api/teams`);
     const data = await res.json();
     setLocalTeams(data);
   };
@@ -25,7 +27,7 @@ function App() {
   const addTeam = async (e) => {
     e.preventDefault();
     if (!newTeamName) return;
-    await fetch("http://localhost:5000/api/teams", {
+    await fetch(`${API_URL}/api/teams`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: newTeamName }),
@@ -35,7 +37,7 @@ function App() {
   };
 
   const deleteTeam = async (id) => {
-    await fetch(`http://localhost:5000/api/teams/${id}`, { method: "DELETE" });
+    await fetch(`${API_URL}/api/teams/${id}`, { method: "DELETE" });
     fetchLocalTeams();
   };
 
