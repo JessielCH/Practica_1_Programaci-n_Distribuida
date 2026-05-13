@@ -5,7 +5,7 @@ function App() {
   const [localTeams, setLocalTeams] = useState([]);
   const [newTeamName, setNewTeamName] = useState("");
 
-  const API_URL = "http://54.156.217.202:5000"; // Definimos la base de la URL
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000"; // Definimos la base de la URL
 
   // Load local teams from DB on component mount
   useEffect(() => {
