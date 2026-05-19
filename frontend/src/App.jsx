@@ -5,7 +5,7 @@ function App() {
   const [localTeams, setLocalTeams] = useState([]);
   const [newTeamName, setNewTeamName] = useState("");
 
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";"; // Definimos la base de la URL
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000"; // Definimos la base de la URL
 
   // Load local teams from DB on component mount
   useEffect(() => {
@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 p-6 font-sans">
       <h1 className="text-3xl font-bold text-center text-indigo-400 mb-10 uppercase tracking-tighter">
-        Football Team Management - UCE Systems Engineering
+        ⚽ Football Team Management Dashboard - UCE
       </h1>
 
       <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
