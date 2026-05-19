@@ -82,7 +82,7 @@ function App() {
               type="text"
               value={newTeamName}
               onChange={(e) => setNewTeamName(e.target.value)}
-              placeholder="Team name..."
+              placeholder=" Enter New Team name..."
               className="flex-1 bg-slate-800 border border-slate-700 p-2 rounded-lg focus:outline-none focus:border-emerald-500 text-white"
             />
             <button className="bg-emerald-600 hover:bg-emerald-500 px-4 rounded-lg font-bold text-white">
